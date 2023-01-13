@@ -79,7 +79,7 @@ const Contact = () => {
         <div className='flex flex-col max-w-[600px] w-full'>
             <div className='pb-8 flex flex-col justify-center w-full h-full items-center'>
                 <p className='text-4xl font-bold inline border-b-4 border-violet-400'>{t("nav.contact")}</p>
-                <p className='py-4'>{t("contact.text")}</p>
+                <p className='py-6 text-2xl'>{t("contact.text")}</p>
             </div>
          <form className='flex flex-col text-[#1f2021]' onSubmit={onSubmit}>
             <input 
@@ -105,7 +105,7 @@ const Contact = () => {
               onChange={updateFormControl}
               className='border p-2 mb-4' 
               name="message" 
-              rows="10" 
+              rows="6" 
               placeholder={t("contact.labelMessage")}
               id='message'
               value={formState.message}

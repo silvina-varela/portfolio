@@ -42,7 +42,7 @@ const Work = () => {
   return (
     <div name='work' className='w-full md:h-screen bg-white dark:bg-[#1f2021] text-[#1f2021] dark:text-white'>
       <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-        <div className='pb-8 w-full flex justify-center items-center flex-col'>
+        <div className='w-full flex justify-center items-center flex-col'>
           <p className='text-4xl font-bold inline border-b-4 border-violet-400'>
           {t("nav.work")}
           </p>
@@ -73,7 +73,7 @@ const Work = () => {
         </ScrollContainer>
         
       </div>
-     <div className="flex justify-end pr-4 text-xl">
+     <div className="flex justify-end pr-4 text-xl mb-12 invisible md:visible">
      {prev && (
           <button className="absolute rounded-3xl p-2 bg-violet-500 hover:bg-violet-400 text-white border-violet-700 hover:border-violet-500 border-none cursor-pointer hover:scale-105" onClick={slidePrev}>
           <FaArrowLeft/>
