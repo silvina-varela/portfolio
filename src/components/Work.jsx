@@ -62,7 +62,7 @@ const Work = () => {
                   className="w_image"
                   style={{ backgroundImage: `url(${item.i})` }}
                 />
-                <div className="w-11/12 px-2 h-14 flex items-center justify-between text-[#1f2021]">
+                <div className="w-11/12 px-2 h-14 flex items-center justify-between ">
                   <h2 className="text-base font-bold pt-2">{item.a}</h2>
                   <button onClick={() => {window.open(item.g);}} className="hover:text-violet-600 duration-500"><FaGithub title='GitHub' size={20}/></button>
                 </div>
