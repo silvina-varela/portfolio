@@ -5,7 +5,8 @@
         "skills": "Habilidades",
         "work": "Trabajo",
         "contact": "Contacto",
-        "resume": "CV"
+        "resume": "CV",
+        "resumeLink": "SilvinaVARELA_CV.pdf"
     },
     "home": {
         "text": "Hola! Soy Silvina. Desarrollo aplicaciones responsive utilizando React y Node.",

@@ -10,7 +10,7 @@ import Contact from './components/Contact';
 function App() {
 
   return (
-    <Suspense fallback="loading">
+    <Suspense fallback="loading" >
       <NavBar/>  
       <Home/>
       <About/>

@@ -5,8 +5,8 @@
         "skills": "Skills",
         "work": "Work",
         "contact": "Contact",
-        "resume": "Resume",
-        "resumeLink": ""
+        "resume": "Résumé",
+        "resumeLink": "SilvinaVARELA_resume.pdf"
     },
     "home": {
         "text": "Hi! I'm Silvina. I love creating responsive web apps using React and Node.",

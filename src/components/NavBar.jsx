@@ -1,18 +1,34 @@
-import React, { useState } from 'react'; 
+import React, { useState, forwardRef } from 'react'; 
 import {
   FaBars,
   FaTimes,
   FaGithub,
   FaLinkedin,
-  FaFileAlt
+  FaFileAlt,
+  FaDownload
 } from 'react-icons/fa';
 import { Link } from 'react-scroll';
+
+/** Dark mode imports */
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import useDarkMode from '../hooks/useDarkMode';
+
+/** Translation imports */
 import LanguageSelector from './LanguageSelector';
 import { useTranslation } from "react-i18next";
 
-const Navbar = (props) => {
+/** PDF viewer imports */
+import { Worker } from '@react-pdf-viewer/core';
+import { Viewer } from '@react-pdf-viewer/core';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import Dialog from '@mui/material/Dialog';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Slide from '@mui/material/Slide';
+
+const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
 
@@ -30,6 +46,35 @@ const Navbar = (props) => {
         setDarkMode(checked);
     };
 
+  /** PDF viewer  */
+  const Transition = forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+  });
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleDownload = () => {
+    fetch(t("nav.resumeLink")).then(response => {
+      response.blob().then(blob => {
+          // Creating new object of PDF file
+          const fileURL = window.URL.createObjectURL(blob);
+          // Setting various property values
+          let alink = document.createElement('a');
+          alink.href = fileURL;
+          alink.download = t("nav.resumeLink");
+          alink.click();
+      })
+  })
+  }
+ 
   return (
     <div className='z-10 fixed w-full h-[60px] flex justify-between items-center px-4 bg-[#1f2021] text-white'>
     <div className='border-2 p-2'>
@@ -145,18 +190,52 @@ const Navbar = (props) => {
               Github <FaGithub size={25} />
             </a>
           </li>
-          {/* <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300'>
-            <a
-              className='flex justify-between items-center w-full ml-5'
-              href={("nav.resumeLink")}
-              download="SilvinaVARELA_resume"
-              target='_blank' rel="noreferrer"
-            >
-              {t("nav.resume")} <FaFileAlt size={25} />
-            </a>
-          </li>  */}
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300'>
+            <button className='flex justify-between items-center w-full ml-5' onClick={handleClickOpen}>{t("nav.resume")} <FaFileAlt size={25}/></button>
+          </li> 
         </ul>
       </div>
+      {/* Resume */}
+      <Dialog
+        fullScreen
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Transition}
+       
+      >
+        <AppBar sx={{ position: 'relative', backgroundColor: 'white' }} >
+          <Toolbar
+          sx={{ backgroundColor: 'white'}}>
+            <IconButton
+              edge="start"
+              sx={{ text: 'black'}}
+              onClick={handleClose}
+              aria-label="close"
+            >
+              <FaTimes />
+            </IconButton>
+
+            <Typography sx={{ ml: 2, flex: 1, color: 'black' }} variant="h6" component="div">
+            {t("nav.resume")}
+            </Typography>
+
+            <IconButton
+              edge="end"
+              sx={{ text: 'black'}}
+              onClick={handleDownload}
+              aria-label="close"
+            >
+              <FaDownload/>
+            </IconButton>
+            
+         
+            
+          </Toolbar>
+        </AppBar>
+        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.1.81/build/pdf.worker.min.js">
+        <Viewer fileUrl={t("nav.resumeLink")} />;
+        </Worker>
+      </Dialog>  
     </div>
   );
 };
