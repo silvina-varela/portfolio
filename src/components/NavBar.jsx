@@ -163,13 +163,38 @@ const Navbar = () => {
           {t("nav.contact")}
           </Link>
         </li>
-        <li>
-        <DarkModeSwitch
+        <li className='py-6 flex'>
+            <LanguageSelector/>
+            <DarkModeSwitch
                 checked={darkMode}
                 onChange={toggleDarkMode}
-                size={25}
+                size={20}
+                className='ml-4'
             />
+            
         </li>
+        
+        <li className='py-6 flex'>
+            <a
+              href='https://www.linkedin.com/in/silvinavarela/'
+              target='_blank'
+              rel="noreferrer"
+            >
+              <FaLinkedin size={25} />
+            </a>
+            <a
+              href='https://github.com/silvina-varela'
+              target='_blank'
+              rel="noreferrer"
+              className='ml-4'
+            >
+              <FaGithub size={25} />
+            </a>
+          </li>
+        
+          <li className='text-lg'>
+            <button onClick={handleClickOpen}>{t("nav.resume")}</button>
+          </li>
       </ul>
       {/* Social icons */}
       <div className='hidden lg:flex fixed flex-col top-[35%] left-0 text-[#1f2021] dark:text-white'>
@@ -177,7 +202,9 @@ const Navbar = () => {
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300'>
             <a
               className='flex justify-between items-center w-full ml-5'
-              href='/'
+              href='https://www.linkedin.com/in/silvinavarela/'
+              target='_blank'
+              rel="noreferrer"
             >
               LinkedIn <FaLinkedin size={25} />
             </a>
@@ -185,7 +212,9 @@ const Navbar = () => {
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300'>
             <a
               className='flex justify-between items-center w-full ml-5'
-              href='/'
+              href='https://github.com/silvina-varela'
+              target='_blank'
+              rel="noreferrer"
             >
               Github <FaGithub size={25} />
             </a>
