@@ -1,0 +1,37 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "skills": "Skills",
+        "work": "Work",
+        "contact": "Contact",
+        "resume": "Resume",
+        "resumeLink": ""
+    },
+    "home": {
+        "text": "Hi! I'm Silvina. I love creating responsive web apps using React and Node.",
+        "button": "About me"
+    },
+    "about": {
+        "type": "type-me",
+        "bio": "As a Full Stack Developer familiar with backend technologies, I mostly focus on the frontend. I'm passionate about building scalable and accessible web applications that solve problems. I strongly believe my background in book publishing and translation has given me invaluable tools that help me write clean code, communicate well and think critically.",
+        "extra": "Outside of coding, I enjoy woodworking and travelling."
+    },
+    "skills": {
+        "text": "Here's a list of technologies I've worked with"
+    },
+    "work": {
+        "text": "Check out some of my most recent work"
+    },
+    "contact": {
+        "text": "If you are interested in knowing more about me or my work, send me a message",
+        "labelName": "Name",
+        "labelEmail": "Email",
+        "labelMessage": "Message",
+        "buttonSending": "Sending...",
+        "buttonSend": "Send",
+        "successMessage": "Thanks! I will get back to you soon.",
+        "errorMessage": "Sorry! Something went wrong. Please try again later."
+
+    }
+}

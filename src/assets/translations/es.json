@@ -1,0 +1,36 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "about": "Sobre mí",
+        "skills": "Habilidades",
+        "work": "Trabajo",
+        "contact": "Contacto",
+        "resume": "CV"
+    },
+    "home": {
+        "text": "Hola! Soy Silvina. Desarrollo aplicaciones responsive utilizando React y Node.",
+        "button": "Sobre mí"
+    },
+    "about": {
+        "type": "type-yo",
+        "bio": "Soy una Full Stack Developer familiarizada con tecnologías del backend, pero enfocada principalmente en el frontend. Tengo un gran interés en la creación de aplicaciones web que sean escalables y accesibles y que solucionen problemas. Creo que mi background en edición y traducción me ha dado excelentes herramientas que me prepararon para escribir código limpio, comunicar bien y pensar críticamente.",
+        "extra": "Cuando no estoy codeando, me gusta crear objetos con madera y viajar."
+    },
+    "skills": {
+        "text": "Estas son las tecnologías con las que he trabajado"
+    },
+    "work": {
+        "text": "Algunos de mis proyectos más recientes"
+    },
+    "contact": {
+        "text": "Si te interesa saber más sobre mí o mi trabajo, enviame un mensaje",
+        "labelName": "Nombre",
+        "labelEmail": "Email",
+        "labelMessage": "Mensaje",
+        "buttonSending": "Enviando...",
+        "buttonSend": "Enviar",
+        "successMessage": "¡Gracias! Te responderé pronto.",
+        "errorMessage": "¡Oh, no! Hubo un error. Por favor intenta nuevamente más tarde."
+
+    }
+}

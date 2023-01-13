@@ -4,6 +4,7 @@ const data = [
       l: "https://royalmakeup.vercel.app/",
       g: "https://github.com/silvina-varela/E-commerce",
       a: "Royal Makeup",
+      d: "E-commerce"
     },
   
     {
@@ -11,6 +12,7 @@ const data = [
       l: "https://silvina-varela.github.io/recipes-app/",
       g: "https://github.com/silvina-varela/recipes-app",
       a: "The Meal Finder",
+      d: "SPA"
     },
   ];
   

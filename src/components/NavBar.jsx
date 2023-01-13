@@ -4,16 +4,20 @@ import {
   FaTimes,
   FaGithub,
   FaLinkedin,
+  FaFileAlt
 } from 'react-icons/fa';
-import { HiOutlineMail } from 'react-icons/hi';
-import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { Link } from 'react-scroll';
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import useDarkMode from '../hooks/useDarkMode';
+import LanguageSelector from './LanguageSelector';
+import { useTranslation } from "react-i18next";
 
 const Navbar = (props) => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
+
+  const { t } = useTranslation('common');
+
 
   /** Dark mode */
   const [colorTheme, setTheme] = useDarkMode();
@@ -26,7 +30,6 @@ const Navbar = (props) => {
         setDarkMode(checked);
     };
 
-  
   return (
     <div className='z-10 fixed w-full h-[60px] flex justify-between items-center px-4 bg-[#1f2021] text-white'>
     <div className='border-2 p-2'>
@@ -36,28 +39,32 @@ const Navbar = (props) => {
       <ul className='hidden md:flex gap-x-8'>
         <li>
           <Link to='home' smooth={true} duration={500}>
-            Home
+          {t("nav.home")}
           </Link>
         </li>
         <li>
           <Link to='about' smooth={true} duration={500}>
-            About
+          {t("nav.about")}
           </Link>
         </li>
         <li>
           <Link to='skills' smooth={true} duration={500}>
-            Skills
+          {t("nav.skills")}
           </Link>
         </li>
         <li>
           <Link to='work' smooth={true} duration={500}>
-            Work
+          {t("nav.work")}
           </Link>
         </li>
         <li>
           <Link to='contact' smooth={true} duration={500}>
-            Contact
+          {t("nav.contact")}
           </Link>
+        </li>
+        <li>
+            <LanguageSelector/>
+            
         </li>
         <li>
             <DarkModeSwitch
@@ -68,6 +75,7 @@ const Navbar = (props) => {
 
             />
         </li>
+        
       </ul>
       {/* Hamburger */}
       <div onClick={handleClick} className='md:hidden z-10'>
@@ -83,31 +91,31 @@ const Navbar = (props) => {
       >
         <li className='py-6 text-4xl'>
           <Link onClick={handleClick} to='home' smooth={true} duration={500}>
-            Home
+          {t("nav.home")}
           </Link>
         </li>
         <li className='py-6 text-4xl'>
           {' '}
           <Link onClick={handleClick} to='about' smooth={true} duration={500}>
-            About
+          {t("nav.about")}
           </Link>
         </li>
         <li className='py-6 text-4xl'>
           {' '}
           <Link onClick={handleClick} to='skills' smooth={true} duration={500}>
-            Skills
+          {t("nav.skills")}
           </Link>
         </li>
         <li className='py-6 text-4xl'>
           {' '}
           <Link onClick={handleClick} to='work' smooth={true} duration={500}>
-            Work
+          {t("nav.work")}
           </Link>
         </li>
         <li className='py-6 text-4xl'>
           {' '}
           <Link onClick={handleClick} to='contact' smooth={true} duration={500}>
-            Contact
+          {t("nav.contact")}
           </Link>
         </li>
         <li>
@@ -137,22 +145,16 @@ const Navbar = (props) => {
               Github <FaGithub size={25} />
             </a>
           </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300'>
+          {/* <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300'>
             <a
               className='flex justify-between items-center w-full ml-5'
-              href='/'
+              href={("nav.resumeLink")}
+              download="SilvinaVARELA_resume"
+              target='_blank' rel="noreferrer"
             >
-              Email <HiOutlineMail size={25} />
+              {t("nav.resume")} <FaFileAlt size={25} />
             </a>
-          </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300'>
-            <a
-              className='flex justify-between items-center w-full ml-5'
-              href='/'
-            >
-              Resume <BsFillPersonLinesFill size={25} />
-            </a>
-          </li>
+          </li>  */}
         </ul>
       </div>
     </div>

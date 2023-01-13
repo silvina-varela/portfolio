@@ -6,8 +6,10 @@ import {
   FaArrowRight,
   FaArrowLeft
 } from 'react-icons/fa';
+import { useTranslation } from "react-i18next";
 
 const Work = () => {
+  const { t } = useTranslation('common');
   const sliderRef = useRef();
   const [prev, set_prev] = useState(false);
   const [next, set_next] = useState(false);
@@ -42,9 +44,9 @@ const Work = () => {
       <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
         <div className='pb-8 w-full flex justify-center items-center flex-col'>
           <p className='text-4xl font-bold inline border-b-4 border-violet-400'>
-            Work
+          {t("nav.work")}
           </p>
-          <p className='py-6 text-2xl'>Check out some of my most recent work</p>
+          <p className='py-6 text-2xl'>{t("work.text")}</p>
         </div>
 
         <div className="flex flex-col ">
@@ -60,10 +62,11 @@ const Work = () => {
                   className="w_image"
                   style={{ backgroundImage: `url(${item.i})` }}
                 />
-                <div className="w-full h-14 flex items-center justify-between text-[#1f2021]">
-                  <h2 className="text-base font-bold  pt-2">{item.a}</h2>
+                <div className="w-11/12 px-2 h-14 flex items-center justify-between text-[#1f2021]">
+                  <h2 className="text-base font-bold pt-2">{item.a}</h2>
                   <button onClick={() => {window.open(item.g);}} className="hover:text-violet-600 duration-500"><FaGithub title='GitHub' size={20}/></button>
                 </div>
+                <div className="px-2">{item.d}</div>
               </div>
             );
           })}

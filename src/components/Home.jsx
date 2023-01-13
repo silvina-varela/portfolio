@@ -1,8 +1,9 @@
 import React from 'react';
-// import portrait from '../assets/portrait.jpg';
 import { Link } from "react-scroll"; 
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t } = useTranslation('common');
   return (
     <div
     name="home"
@@ -13,9 +14,8 @@ const Home = () => {
         <h2 className="text-4xl sm:text-7xl font-bold underline decoration-violet-400 text-[#1f2021] dark:text-white">
           Full Stack Developer
         </h2>
-        <p className="text-gray-500 py-4 max-w-lg mb-5">
-          Hi, I'm Silvina. 
-          I have experience creating responsive web apps using React and Node.
+        <p className="text-gray-500 text-2xl py-4 max-w-lg mb-5">
+          {t("home.text")}
         </p>
         <div>
           <Link
@@ -24,7 +24,7 @@ const Home = () => {
             duration={500}
             className="cursor-pointer bg-violet-500 hover:bg-violet-400 text-white font-bold py-2 px-4 border-b-4 border-violet-700 hover:border-violet-500 rounded"
           >
-            About Me
+            {t("home.button")}
           </Link>
         </div>
       </div>

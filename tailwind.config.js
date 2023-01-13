@@ -12,6 +12,10 @@ module.exports = {
           me: {
               words: ['Hi! :)', 'I\'m Silvina Varela'],
               delay: 1
+          },
+          yo: {
+            words: ['Hola! :)', 'Soy Silvina Varela'],
+            delay: 1
           }
       }
   })

@@ -2,8 +2,11 @@ import React, {useRef, useState} from 'react';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 import SnackBar from './SnackBar';
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation('common');
+
   const formId = 'FJfRZJs8';
   const formUrl = `https://submit-form.com/${formId}`;
 
@@ -75,15 +78,15 @@ const Contact = () => {
     <div name='contact' className='w-full h-screen bg-white dark:bg-[#1f2021] text-[#1f2021] dark:text-white flex justify-center items-center p-4'>
         <div className='flex flex-col max-w-[600px] w-full'>
             <div className='pb-8 flex flex-col justify-center w-full h-full items-center'>
-                <p className='text-4xl font-bold inline border-b-4 border-violet-400'>Get in touch</p>
-                <p className='py-4'>If you are interested in knowing more about me or my work, send me a message.</p>
+                <p className='text-4xl font-bold inline border-b-4 border-violet-400'>{t("nav.contact")}</p>
+                <p className='py-4'>{t("contact.text")}</p>
             </div>
          <form className='flex flex-col text-[#1f2021]' onSubmit={onSubmit}>
             <input 
               onChange={updateFormControl}
               className='border p-2' 
               type='text' 
-              placeholder='Name' 
+              placeholder={t("contact.labelName")} 
               name='name' 
               id='name' 
               value={formState.name}
@@ -92,7 +95,7 @@ const Contact = () => {
               onChange={updateFormControl}
               className='my-4 p-2 border' 
               type="email" 
-              placeholder='Email' 
+              placeholder={t("contact.labelEmail")} 
               name='email'
               id='email'
               value={formState.email}
@@ -103,7 +106,7 @@ const Contact = () => {
               className='border p-2 mb-4' 
               name="message" 
               rows="10" 
-              placeholder='Message'
+              placeholder={t("contact.labelMessage")}
               id='message'
               value={formState.message}
               required
@@ -119,7 +122,7 @@ const Contact = () => {
             <button 
               disabled={submitting}
               className='px-4 py-3 my-8 mx-auto flex items-center cursor-pointer bg-violet-500 hover:bg-violet-400 text-white font-bold border-b-4 border-violet-700 hover:border-violet-500 rounded' 
-              type='submit'>{submitting ? 'Sending...' : 'Send'}</button>
+              type='submit'>{submitting ? t("contact.buttonSending") : t("contact.buttonSend")}</button>
           </form>
           
           {successMessage && <SnackBar status={successMessage.status} message={true}/>}
