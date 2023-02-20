@@ -56,9 +56,10 @@ const Work = () => {
             return (
               <div key={index} className="w_item">
                 <div
-                  onClick={() => {
-                      window.open(item.l);
-                  }}
+                  // onClick={() => {
+                  //     window.open(item.l);
+                  // }
+                  // }
                   className="w_image"
                   style={{ backgroundImage: `url(${item.i})` }}
                 />
