@@ -1,7 +1,7 @@
 import React from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
 import data from "../data/work";
-import { FaGithub, FaFigma, FaGitlab } from "react-icons/fa";
+import { FaGithub, FaFigma, FaGitlab, FaExternalLinkAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
 const Work = () => {
@@ -62,6 +62,16 @@ const Work = () => {
                         className="hover:text-violet-600 duration-500"
                       >
                         <FaFigma title="Figma" size={20} />
+                      </button>
+                    )}
+                    {item.l && (
+                      <button
+                        onClick={() => {
+                          window.open(item.l);
+                        }}
+                        className="hover:text-violet-600 duration-500"
+                      >
+                        <FaExternalLinkAlt title="Page" size={20} />
                       </button>
                     )}
                   </div>
