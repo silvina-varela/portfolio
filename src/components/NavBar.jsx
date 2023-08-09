@@ -5,7 +5,8 @@ import {
   FaGithub,
   FaLinkedin,
   FaFileAlt,
-  FaDownload
+  FaDownload,
+  FaGitlab
 } from 'react-icons/fa';
 import { Link } from 'react-scroll';
 
@@ -190,6 +191,14 @@ const Navbar = () => {
             >
               <FaGithub size={25} />
             </a>
+            <a
+              href='https://gitlab.com/silvina-varela'
+              target='_blank'
+              rel="noreferrer"
+              className='ml-4'
+            >
+              <FaGitlab size={25} />
+            </a>
           </li>
         
           <li className='text-lg'>
@@ -217,6 +226,16 @@ const Navbar = () => {
               rel="noreferrer"
             >
               Github <FaGithub size={25} />
+            </a>
+          </li>
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300'>
+            <a
+              className='flex justify-between items-center w-full ml-5'
+              href='https://gitlab.com/silvina-varela'
+              target='_blank'
+              rel="noreferrer"
+            >
+              Gitlab <FaGitlab size={25} />
             </a>
           </li>
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300'>

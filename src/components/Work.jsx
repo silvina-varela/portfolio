@@ -1,9 +1,8 @@
 import React from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
 import data from "../data/work";
-import { FaGithub, FaFigma } from "react-icons/fa";
+import { FaGithub, FaFigma, FaGitlab } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-
 
 const Work = () => {
   const { t } = useTranslation("common");
@@ -20,8 +19,9 @@ const Work = () => {
           </p>
           <p className="py-6 text-2xl">{t("work.text")}</p>
         </div>
+
         <ScrollContainer
-        vertical={false}
+          vertical={false}
           className="flex cursor-grab scroll-smooth"
         >
           {data.map((item, index) => {
@@ -31,30 +31,47 @@ const Work = () => {
                   className="w_image"
                   style={{ backgroundImage: `url(${item.i})` }}
                 />
-                <div className="w-11/12 px-2 h-14 flex items-center justify-between ">
+                <div className="w-11/12 px-2 h-14 flex items-center justify-between">
                   <h2 className="text-base font-bold pt-2">{item.a}</h2>
-                  {item.g && (
-                    <button
-                      onClick={() => {
-                        window.open(item.g);
-                      }}
-                      className="hover:text-violet-600 duration-500"
-                    >
-                      <FaGithub title="GitHub" size={20} />
-                    </button>
-                  )}
-                  {item.f && (
-                    <button
-                      onClick={() => {
-                        window.open(item.f);
-                      }}
-                      className="hover:text-violet-600 duration-500"
-                    >
-                      <FaFigma title="Figma" size={20} />
-                    </button>
-                  )}
+                  <div className="flex flex-end space-x-2">
+                    {item.g && (
+                      <button
+                        onClick={() => {
+                          window.open(item.g);
+                        }}
+                        className="hover:text-violet-600 duration-500"
+                      >
+                        <FaGithub title="GitHub" size={20} />
+                      </button>
+                    )}
+                    {item.gl && (
+                      <button
+                        onClick={() => {
+                          window.open(item.gl);
+                        }}
+                        className="hover:text-violet-600 duration-500"
+                      >
+                        <FaGitlab title="GitLab" size={20} />
+                      </button>
+                    )}
+                    {item.f && (
+                      <button
+                        onClick={() => {
+                          window.open(item.f);
+                        }}
+                        className="hover:text-violet-600 duration-500"
+                      >
+                        <FaFigma title="Figma" size={20} />
+                      </button>
+                    )}
+                  </div>
                 </div>
-                <div className="px-2">{item.d}</div>
+                <div className="px-2 ">
+                  <p className="text-base pb-1">{item.d}</p>
+                  {item.s && <p className="text-xs pb-1">{item.s}</p>}
+
+                  {item.r && <p className="text-xs">Role: {item.r}</p>}
+                </div>
               </div>
             );
           })}
