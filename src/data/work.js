@@ -9,7 +9,7 @@
 
 const data = [
   {
-    i: "https://gitlab.com/pipettin-bot/pipettin-gui/-/raw/develop/assets/07.png",
+    i: "https://i.postimg.cc/SsbXsM48/01-workspace-Page.png",
     gl: "https://gitlab.com/pipettin-bot/pipettin-gui/-/tree/develop",
     f: "https://www.figma.com/proto/7k1MZcrVit7m3AmjXSd5GA/Pipettin-GUI?node-id=117%3A29389&scaling=scale-down&page-id=0%3A1&starting-point-node-id=28%3A2",
     a: "Pipettin",
